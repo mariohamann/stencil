@@ -76,7 +76,8 @@ export const createTesting = async (config: ValidatedConfig): Promise<Testing> =
           outputTarget.empty = false;
         });
 
-        const doBuild = !(config.flags && config.flags.build === false) && !(config.flags && config.flags.skipBuild === true);
+        const doBuild =
+          !(config.flags && config.flags.build === false) && !(config.flags && config.flags.skipBuild === true);
         if (doBuild && config.watch) {
           compilerWatcher = await compiler.createWatcher();
         }
